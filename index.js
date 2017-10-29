@@ -15,8 +15,8 @@ var authKeyPath = path.resolve(__dirname, 'AuthKey_73V3HZ2C3L.p8');
 
 var pushConfig = {'ios': { token: {
    key: authKeyPath, // P8 file only
-   keyId: 'XXXXX', // key ID
-   teamId: 'YYYYY', // The Team ID of your Apple Developer Account (available at https://developer.apple.com/account/#/membership/)
+   keyId: '73V3HZ2C3L', // key ID
+   teamId: '7BFULV8CN5', // The Team ID of your Apple Developer Account (available at https://developer.apple.com/account/#/membership/)
   },
   production: false // set explicitly
  }
