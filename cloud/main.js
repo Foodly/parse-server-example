@@ -7,12 +7,11 @@ Parse.Cloud.define("iosPushTest", function(request, response) {
   var params = request.params;
   var channel = params.channel;
   var messageText = params.text;
-  var pushQuery = new Parse.Query("_Installation");
-  pushQuery.equalTo('channels', channel); // targeting iOS devices only
   Parse.Push.send({
-    where: pushQuery, // Set our Installation query
+    channels: [channel],
     data: {
-      alert: "Message: " + messageText
+      alert: messageText,
+      badge: 1
     }
   }, { success: function() {
       console.log("#### PUSH OK");
