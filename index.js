@@ -4,6 +4,7 @@
 var express = require('express');
 var ParseServer = require('parse-server').ParseServer;
 var path = require('path');
+var https = require('https');
 
 var databaseUri = process.env.DATABASE_URI || process.env.MONGODB_URI;
 
@@ -21,6 +22,8 @@ var pushConfig = {'ios': { token: {
   production: false // set explicitly
  }
 };
+
+Parse.serverUrl = process.env.SERVER_URL;
 
 var api = new ParseServer({
   databaseURI: databaseUri || 'mongodb://localhost:27017/dev',
